@@ -6,19 +6,16 @@ using UnityEngine.UI;
 
 public class SpeedCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TMP_Text ready;
+    
 
     // Update is called once per frame
     void Update()
     {
         if(Player.smashReady){
-            
+            ready.text = "Ready";
         }else{
-            //GameObject.FindObjectOfType<TMP_Text>().text = "Not Ready";
+            ready.text = "Not Ready";
         }
         
     }
