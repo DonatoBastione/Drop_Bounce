@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Enemy Bad
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - EnemyDefeated
+  - Player
+  - Enemy
+  - PlayerDefeated
+  - SmashHitBoxOff
+  - SmashHitBoxOn
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sfondo
+    uniqueID: 2860161283
+    locked: 0
+  - name: Sfondo intermedio
+    uniqueID: 3866607257
+    locked: 0
+  - name: Pavimento
+    uniqueID: 4196063105
+    locked: 0
+  - name: Gioco
+    uniqueID: 438175737
+    locked: 0
