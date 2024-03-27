@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 42226227}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1411,6 +1411,9 @@ MonoBehaviour:
   badEnemy: {fileID: 8401557059942736641, guid: 9d88153208d704aab91dba33e3c8ffe0, type: 3}
   minTimeBad: 1
   maxTimeBad: 2
+  goodEnemy: {fileID: 4530099152715560068, guid: 3a6dd5f41c1964452ade4f8c2752393a, type: 3}
+  minTimeGood: 5
+  maxTimeGood: 8
 --- !u!4 &1819926109
 Transform:
   m_ObjectHideFlags: 0

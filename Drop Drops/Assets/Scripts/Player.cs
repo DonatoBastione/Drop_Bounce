@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
                 BounceEnemy();
             }
             collision.gameObject.layer = 6;
-            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
         }else if(collision.gameObject.CompareTag("Enemy Bad") && velocityPercentage != 0){
             if (smashing){
                 smashing = false;
@@ -79,10 +78,19 @@ public class Player : MonoBehaviour
                 SmashBounceEnemy();
             }else{
                 SmashLogic();
-                BounceEnemuBad();
+                BounceEnemyBad();
             }
             collision.gameObject.layer = 6;
-            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }else if(collision.gameObject.CompareTag("Enemy Good") && velocityPercentage != 0){
+            if (smashing){
+                smashing = false;
+                ActivateSmashHitBox();
+                SmashBounceEnemy();
+            }else{
+                SmashLogic();
+                BounceEnemyGood();
+            }
+            collision.gameObject.layer = 6;
         }
         //Collisione con un nemico cattivo
     }
@@ -126,9 +134,13 @@ public class Player : MonoBehaviour
     private void BounceEnemy(){   
         rb.velocity = rb.velocity.y > 0? rb.velocity*8/9 : -rb.velocity;
     }
-    private void BounceEnemuBad(){
+    private void BounceEnemyBad(){
         rb.velocity = rb.velocity.y > 0? rb.velocity * 2/3 : -rb.velocity*3/5;
         Decellera();
+    }
+    private void BounceEnemyGood(){
+        rb.velocity = rb.velocity.y > 0? rb.velocity*10/9  : -rb.velocity*10/9;
+        Accellera();
     }
     private void SmashBounce(){
         rb.velocity = rb.velocity.y > 0? rb.velocity * 6/5 : -rb.velocity*3/4;

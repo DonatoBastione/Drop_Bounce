@@ -10,14 +10,19 @@ public class EnemyBehaviour : MonoBehaviour
     private float speed;
 
     public static bool changeVelocity;
+    private bool smashed;
+    public Animator animator;
     
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed) * Player.velocityPercentage;
+        smashed = false;
     }
     // Update is called once per frame
     void Update()
     {
+
+        
         if(changeVelocity){
             
             speed *= Player.velocityPercentage;
@@ -31,6 +36,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
         
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.name == "Player"){
+            animator.SetBool("Smashed", true);
+        }
     }
 
     
