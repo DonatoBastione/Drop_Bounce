@@ -4,18 +4,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedCounter : MonoBehaviour
+public class SmashCounter : MonoBehaviour
 {
-    public TMP_Text ready;
+    public RawImage immagine;
+    public Texture texturePronto;
+    public Texture textureNonPronto;
+
     
 
     // Update is called once per frame
     void Update()
     {
         if(Player.smashReady){
-            ready.text = "Ready";
+            immagine.texture = texturePronto;
         }else{
-            ready.text = "Not Ready";
+            immagine.texture = textureNonPronto;
         }
         
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     private int smashReadyCounter;
     private bool smashing; //bool per verificare se il personaggio stà schiantando
 
+    public static  int score;
     public GameObject smashHitBox;
 
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
     {   
         velocityPercentage = 1;
         rb = GetComponent<Rigidbody2D>();
-        smashReady = false;
+        smashReady = true;
         smashReadyCounter = 0;
         smashing = false;
         rb.AddForce(Vector2.up * smashForce, ForceMode2D.Impulse); 
@@ -71,6 +73,7 @@ public class Player : MonoBehaviour
                 BounceEnemy();
             }
             collision.gameObject.layer = 6;
+            point();
         }else if(collision.gameObject.CompareTag("Enemy Bad") && velocityPercentage != 0){
             if (smashing){
                 smashing = false;
@@ -81,16 +84,18 @@ public class Player : MonoBehaviour
                 BounceEnemyBad();
             }
             collision.gameObject.layer = 6;
+            point();
         }else if(collision.gameObject.CompareTag("Enemy Good") && velocityPercentage != 0){
             if (smashing){
                 smashing = false;
                 ActivateSmashHitBox();
-                SmashBounceEnemy();
+                BounceEnemyGood();
             }else{
-                SmashLogic();
+                smashReady = true;
                 BounceEnemyGood();
             }
             collision.gameObject.layer = 6;
+            point();
         }
         //Collisione con un nemico cattivo
     }
@@ -105,7 +110,7 @@ public class Player : MonoBehaviour
     }
 
     private void Decellera(){
-        velocityPercentage -= 0.3f;
+        velocityPercentage -= 0.25f;
         if (velocityPercentage < 0){
             velocityPercentage = 0;
             gameObject.layer = 9;
@@ -139,11 +144,11 @@ public class Player : MonoBehaviour
         Decellera();
     }
     private void BounceEnemyGood(){
-        rb.velocity = rb.velocity.y > 0? rb.velocity*10/9  : -rb.velocity*10/9;
+        rb.velocity = rb.velocity.y > 0? rb.velocity*6/5  : -rb.velocity*6/5;
         Accellera();
     }
     private void SmashBounce(){
-        rb.velocity = rb.velocity.y > 0? rb.velocity * 6/5 : -rb.velocity*3/4;
+        rb.velocity = rb.velocity.y > 0? rb.velocity * 4/3 : -rb.velocity*4/3;
         Accellera();
     }
     private void SmashBounceEnemy(){
@@ -156,5 +161,8 @@ public class Player : MonoBehaviour
         }else{
             smashReady = true;
         }
+    }
+    private void point(){
+        score++;
     }
 }
