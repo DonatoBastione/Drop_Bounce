@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     public static  int score;
     public GameObject smashHitBox;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
 
     void Touch(){
         if (Input.touchCount > 0 && smashReady && velocityPercentage != 0){
+            animator.SetBool("Smashing", true);
             if(rb.velocity.y>0){
                 rb.velocity = -rb.velocity;  //se il player sta salendo, mandalo con la stessa velocità giù
             }
@@ -58,13 +60,16 @@ public class Player : MonoBehaviour
                 smashing = false;
                 ActivateSmashHitBox();
                 SmashBounce();
+                animator.SetBool("Smashing", false);
             }else{
+                DamageAnimation();
                 DecelleraPoco();
             }
         }
         //Collisione con un nemico buono
         if (collision.gameObject.CompareTag("Enemy") && velocityPercentage != 0){
             if (smashing){
+                animator.SetBool("Smashing", false);
                 smashing = false;
                 ActivateSmashHitBox();
                 SmashBounceEnemy();
@@ -76,10 +81,12 @@ public class Player : MonoBehaviour
             point();
         }else if(collision.gameObject.CompareTag("Enemy Bad") && velocityPercentage != 0){
             if (smashing){
+                animator.SetBool("Smashing", false);
                 smashing = false;
                 ActivateSmashHitBox();
                 SmashBounceEnemy();
             }else{
+                DamageAnimation();
                 SmashLogic();
                 BounceEnemyBad();
             }
@@ -87,6 +94,7 @@ public class Player : MonoBehaviour
             point();
         }else if(collision.gameObject.CompareTag("Enemy Good") && velocityPercentage != 0){
             if (smashing){
+                animator.SetBool("Smashing", false);
                 smashing = false;
                 ActivateSmashHitBox();
                 BounceEnemyGood();
@@ -164,5 +172,8 @@ public class Player : MonoBehaviour
     }
     private void point(){
         score++;
+    }
+    private void DamageAnimation(){
+        animator.SetTrigger("Damaged");
     }
 }
