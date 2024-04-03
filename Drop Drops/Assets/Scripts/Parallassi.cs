@@ -11,12 +11,13 @@ public class Parallassi : MonoBehaviour
     float sinlgeTextureWidth;
     public float scale;
 
-    public static bool changeVelocity;
+    public bool changeVelocity;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        changeVelocity = false;
         moveSpeed = startMoveSpeed;
         setupTexture();
     }

@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public GameObject smashHitBox;
     public Animator animator;
 
+    public Parallassi nuvole, isole, mare, spiaggia;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         //Collisione col pavimento
         if (collision.gameObject.name == "Floor"){
+            GetComponent<AudioSource>().Play();
             if (smashing){
                 smashing = false;
                 ActivateSmashHitBox();
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
         }
         //Collisione con un nemico buono
         if (collision.gameObject.CompareTag("Enemy") && velocityPercentage != 0){
+            GetComponent<AudioSource>().Play();
             if (smashing){
                 animator.SetBool("Smashing", false);
                 smashing = false;
@@ -80,6 +84,7 @@ public class Player : MonoBehaviour
             collision.gameObject.layer = 6;
             point();
         }else if(collision.gameObject.CompareTag("Enemy Bad") && velocityPercentage != 0){
+            GetComponent<AudioSource>().Play();
             if (smashing){
                 animator.SetBool("Smashing", false);
                 smashing = false;
@@ -93,6 +98,7 @@ public class Player : MonoBehaviour
             collision.gameObject.layer = 6;
             point();
         }else if(collision.gameObject.CompareTag("Enemy Good") && velocityPercentage != 0){
+            GetComponent<AudioSource>().Play();
             if (smashing){
                 animator.SetBool("Smashing", false);
                 smashing = false;
@@ -113,7 +119,10 @@ public class Player : MonoBehaviour
         if (velocityPercentage > 1){
             velocityPercentage = 1;
         }
-        Parallassi.changeVelocity = true;
+        nuvole.changeVelocity = true;
+        isole.changeVelocity = true;
+        mare.changeVelocity = true;
+        spiaggia.changeVelocity = true;
         EnemyBehaviour.changeVelocity = true;
     }
 
@@ -123,7 +132,10 @@ public class Player : MonoBehaviour
             velocityPercentage = 0;
             gameObject.layer = 9;
         }
-        Parallassi.changeVelocity = true;
+        nuvole.changeVelocity = true;
+        isole.changeVelocity = true;
+        mare.changeVelocity = true;
+        spiaggia.changeVelocity = true;
         EnemyBehaviour.changeVelocity = true;
     }
     private void DecelleraPoco(){
@@ -132,7 +144,10 @@ public class Player : MonoBehaviour
             velocityPercentage = 0;
             gameObject.layer = 9;
         }
-        Parallassi.changeVelocity = true;
+        nuvole.changeVelocity = true;
+        isole.changeVelocity = true;
+        mare.changeVelocity = true;
+        spiaggia.changeVelocity = true;
         EnemyBehaviour.changeVelocity = true;
     }
 

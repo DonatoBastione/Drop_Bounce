@@ -44,14 +44,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Sfondo
+  - name: Nuvole
     uniqueID: 2860161283
     locked: 0
-  - name: Sfondo intermedio
+  - name: Isolette
     uniqueID: 3866607257
     locked: 0
-  - name: Pavimento
+  - name: Mare
     uniqueID: 4196063105
+    locked: 0
+  - name: Spiaggia
+    uniqueID: 2012542821
     locked: 0
   - name: Gioco
     uniqueID: 438175737
