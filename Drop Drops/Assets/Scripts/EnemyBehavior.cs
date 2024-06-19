@@ -10,13 +10,12 @@ public class EnemyBehaviour : MonoBehaviour
     private float speed;
 
     public static bool changeVelocity;
-    private bool smashed;
+
     public Animator animator;
     
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed) * Player.velocityPercentage;
-        smashed = false;
     }
     // Update is called once per frame
     void Update()

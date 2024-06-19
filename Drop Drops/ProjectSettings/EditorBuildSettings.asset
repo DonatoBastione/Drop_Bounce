@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu Screen.unity
+    guid: 37883d87715b24de7821cf9878c67756
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Experience.unity
+    guid: 33217ad15ecc84bbca4bf44ab0e48501
+  - enabled: 1
+    path: Assets/Scenes/Brainrot.unity
+    guid: 86295755aa36f440ba5618bda4405139
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: a069bb03ee5f34569b73a2a71ca19ca1, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: bab55e447359d45ce896146d2470f554, type: 2}
