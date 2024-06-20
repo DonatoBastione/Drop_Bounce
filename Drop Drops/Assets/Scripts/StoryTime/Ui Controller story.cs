@@ -74,11 +74,7 @@ public class UiControllerstory : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     void FadeIn(TextScript text){
         text.fadeIn = true;
     }
