@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5299811017307160661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7375999095904745625}
+  - component: {fileID: 4256430053403100810}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7375999095904745625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299811017307160661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4256430053403100810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299811017307160661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d035a98e8f9ff4317b08d6cf0daf24b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueberry: {fileID: 7234480703873853985, guid: 13d48e746ab144dd38426bac46be96d8, type: 3}
+  redberry: {fileID: 1056264092303929448, guid: a4bf0d22035c8472ca3674b1ccea83c2, type: 3}
+  lemon: {fileID: 6289628476764307624, guid: 61425cc335d9c441fa2489a8f7f2bd27, type: 3}
+  banana: {fileID: 1511959343234248101, guid: 1c826b99faffb4ce58803076db46fb76, type: 3}
+  orange: {fileID: 824679855588676370, guid: 617f5f9f7ef094084acd925c380901c1, type: 3}
+  apple: {fileID: 40546318891739918, guid: 7fe8b808757f14bcb8b713ec8290e453, type: 3}
+  peach: {fileID: 1323306963681148029, guid: 98bdf8547019b408cbc597a1c5a84c2a, type: 3}
+  coconut: {fileID: 929506423322729858, guid: fd0711ec700f442478f5298e5a82c8e2, type: 3}
+  melon: {fileID: 8111132720626427758, guid: fb1d50974d48047b6a65909626eb419a, type: 3}
+  ananas: {fileID: 4003666054591512162, guid: 2c50356f383924f26bd4febaa3672af8, type: 3}
+  maxFruit: 2
+  nextFruit: {fileID: 0}

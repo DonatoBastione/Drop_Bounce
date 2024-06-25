@@ -7,10 +7,11 @@ public class MainMenuScritp : MonoBehaviour
 {
     public GameObject AssiDiLegno;
     public GameObject ButFirst;
+    public GameObject SelectGame;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     // Update is called once per frame
@@ -22,6 +23,10 @@ public class MainMenuScritp : MonoBehaviour
         AssiDiLegno.SetActive(false);
         ButFirst.SetActive(true);
     }
+    public void SecondaParte(){
+        ButFirst.SetActive(false);
+        SelectGame.SetActive(true);
+    }
     public void Play(){
         SceneManager.LoadScene("SampleScene");
     }
@@ -30,5 +35,8 @@ public class MainMenuScritp : MonoBehaviour
     }
     public void Brainrot(){
         SceneManager.LoadScene("Brainrot");
+    }
+    public void Suika(){
+        SceneManager.LoadScene("Suika");
     }
 }

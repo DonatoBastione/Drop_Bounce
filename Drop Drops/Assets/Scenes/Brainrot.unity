@@ -1209,6 +1209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssiDiLegno: {fileID: 2029312813}
   ButFirst: {fileID: 1833123292}
+  SelectGame: {fileID: 1661992247}
 --- !u!1 &1661992247
 GameObject:
   m_ObjectHideFlags: 0

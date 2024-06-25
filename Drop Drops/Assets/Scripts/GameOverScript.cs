@@ -13,6 +13,11 @@ public class GameOverScript : MonoBehaviour
         }
     }
     public void Restart(){
+        Player.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Menu(){
+        Player.score = 0;
+        SceneManager.LoadScene("Main Menu Screen");
     }
 }
